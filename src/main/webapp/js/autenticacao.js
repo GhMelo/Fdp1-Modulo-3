@@ -2,7 +2,7 @@
 	Autenticacao =function(){}
 
 	//metodo
-	Autenticacao.prototype.validarCampos =function(){
+	this.validarCampos =function(){
 
 		 elementoUsuario = document.getElementById("txtUsuario");
 		 textoDigitadoUsuario = elementoUsuario.value;
@@ -19,5 +19,5 @@
 		}
 	  }
 	  //instanciando objeto
-	  aut = new Autenticacao();
+	 
 	
