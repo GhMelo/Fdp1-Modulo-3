@@ -1,78 +1,39 @@
 <html>
+
 <head>
+    <script src = "js/usuario-service.js"></script>
+    <script src = "js/usuario-controller.js"></script>
     <script>
-       UsuarioController = function(){
-           this.usuarios = [];
-           //criando CREATE
-           this.adicionar =function(usu){
-               this.usuarios.push(usu);
-           }
-           //buscando RETRIEVE
-           this.buscarTodos=function(){
-               return this.usuarios;
-           }
-           //remover do vetor REMOVE
-           this.excluir =function(){
-            
-           }
-           //alterar no vetor UPDATE
-           this.alterar=function(usu){
-
-           }
-
-           //dom
-           this.aoClicarListar =function(){
-            usuarios = this.buscarTodos();
-           this.renderizarTabelaUsuarios(usuarios);
-           }
-
-           this.renderizarTabelaUsuarios =function(arrUsuarios){
-           dados="";
-           for(i=0;i<arrUsuarios.length; i++){
-            dados += "<tr><td>" +arrUsuarios[i].nome + "</td><td>" +arrUsuarios[i].senha + "</td></tr>";
-           }
-            document.getElementById("tbUsuarios").innerHTML = dados;
-
-           }
-           //Eventos
-           this.aoClicarSalvar = function(){
-               //leitura de dados
-               nomeUsuario = document.getElementById("txtUsuario").value;
-               senhaUsuario =document.getElementById("txtSenha").value;
-               //constroi um objeto usuario
-               usu = {nome:nomeUsuario, senha:senhaUsuario};
-               //adiciona no vetor
-               this.adicionar(usu);
-           }
-           
-       }
-       uc = new UsuarioController();
+        uc = new UsuarioController();
     </script>
 </head>
+
 <body>
-<form>
+    <form>
 
-<input id="txtUsuario" placeholder="Nome de Usuario"/>
-<input id="txtSenha" placeholder="Senha" type="password"/>
-<input type="button" value="Salvar" onclick="uc.aoClicarSalvar()"/>
-<input type="button" value="Listar" onclick="uc.aoClicarListar()"/>
+        <input id="txtUsuario" placeholder="Nome de Usuario" />
+        <input id="txtSenha" placeholder="Senha" type="password" />
+        <input type="button" value="Salvar" onclick="uc.aoClicarSalvar()" />
+        <input type="button" value="Listar" onclick="uc.aoClicarListar()" />
+        <input type="button" value="Cancelar" onclick="uc.aoClicarCancelar()" />
 
-</form>
-<table border="1">
-<thead>
-    <tr>
-        <th>Nome</th>
-        <th>Senha</th>
-    </tr>
-    </thead>
-    <tbody id="tbUsuarios">
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Senha</th>
+                <th> - </th>
+                <th> - </th>
+            </tr>
+        </thead>
+        <tbody id="tbUsuarios">
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
 </body>
 <script>
-    
 
 </script>
 
